@@ -157,7 +157,8 @@ LaneBlocker::LaneBlocker(const rclcpp::NodeOptions& options)
     this->declare_parameter("continuous_checker", false);
   RCLCPP_INFO(
     this->get_logger(),
-    "Setting parameter continuous_checker to %s", _continuous_checker ? "true" : "false"
+    "Setting parameter continuous_checker to %s",
+    _continuous_checker ? "true" : "false"
   );
 
   _lane_closure_threshold =
