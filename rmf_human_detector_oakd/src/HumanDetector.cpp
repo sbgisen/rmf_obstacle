@@ -201,6 +201,7 @@ HumanDetector::HumanDetector(
         auto roi_it = roiDatas.begin();
 
         auto obstacles = std::make_unique<Obstacles>();
+        obstacles->header.frame_id = data->frame_id;
         std::size_t obstacle_count = 0;
         for (; detection_it != detections.end(); ++detection_it, ++roi_it)
         {
