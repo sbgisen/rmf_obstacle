@@ -27,7 +27,10 @@
   </node>
 
   <node pkg="tf2_ros" exec="static_transform_publisher" output="both" name="oakd_to_rmf_transformer"
-        args ="$(var x) $(var y) $(var z) $(var roll) $(var pitch) $(var yaw) $(var rmf_frame_id) $(var frame_id)">
+      args ="$(var x) $(var y) $(var z) $(var yaw) $(var pitch) $(var roll) $(var rmf_frame_id) camera_link">
+  </node>
+  <node pkg="tf2_ros" exec="static_transform_publisher" output="both" name="camera_to_optical_transformer"
+      args ="0 0 0 -1.57 0 -1.57 camera_link $(var frame_id)"> 
   </node>
 
 </launch>
